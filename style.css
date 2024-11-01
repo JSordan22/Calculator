@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    
+    --btn-color-1: #FFA01A;
+    --btn-color-2: #4D5359;
+    --btn-color-3: #D4D4D2;
+    --scrn-color: #595C5F;
+    --calc-bkg-grad: linear-gradient(90deg, #414549 0%, rgba(25, 25, 25, 88%) 100%);
+    --bkg-color: #D4D4D2;
+    --txt-color-1: #FFFFFF;
+    --txt-color-2: #1E1E1E;
+    --txt-color-3: #FFA01A;
+    
+    --btn-shadow: 0px 3px 4px 0px #00000040;
+    --calc-shadow: 0px 4px 25px 6px #0000004D;
+    --scrn-shadow: inset 5px 5px 1px #00000026;
+    
+    --margin-s: 1em;
+    --margin-m: 1.5em;
+    --margin-l: 2em;
+}
+
