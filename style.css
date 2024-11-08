@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
-    
     --btn-color-1: #FFA01A;
     --btn-color-2: #4D5359;
     --btn-color-3: #D4D4D2;
@@ -90,6 +89,7 @@ body {
 }
 
 .output {
+    max-width: 42rem;
     font-size: 7.5rem;
     font-weight: 300;
     letter-spacing: 0.3rem;
@@ -121,12 +121,12 @@ body {
     justify-content: start;
 }
 
-.button-operator {
+.button-operator, .button-equate {
     background-color: var(--btn-color-1);
     color: var(--txt-color-1);
 }
 
-.button-operator:hover {
+.button-operator:hover, .button-equate:hover {
     background-color: var(--btn-hvr-1);
 }
 
@@ -146,4 +146,13 @@ body {
 
 .button-function:hover {
     background-color: var(--btn-hvr-3);
+}
+
+.active {
+    background-color: white;
+    color: var(--txt-color-3);
+}
+
+.active img {
+    filter: invert(25%) sepia(44%) saturate(2797%) hue-rotate(344deg) brightness(100%) contrast(101%);
 }
