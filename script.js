@@ -57,7 +57,7 @@ buttonOperator.forEach(button => button.addEventListener("click", () => {
         case button.classList.contains("add"):
             operatorFunc("+");
     }
-    console.log("num1: " + num1 + "\nnum2: " + num2);
+    //console.log("num1: " + num1 + "\nnum2: " + num2);
 }));
 
 
@@ -107,11 +107,13 @@ function allClear() {
     clear(0);
     checked();
 }
-
+//clear(1);
 function clear(type) {
     if (type === 0) {
         clearButton.textContent = "AC";
         output.textContent = "0";
+        isOperatorPressed = false;
+        num1 = 0;
     } else if (type === 1) {
         output.textContent = "";
     }
@@ -189,6 +191,7 @@ function operatorFunc(symb) {
         num2 = undefined;
     } else {
         oper = symb;
+        num2 = undefined;
     }
 }
 
@@ -197,3 +200,6 @@ function operatorFunc(symb) {
 function formatResult(value) {
     return value.toString().length > 9 ? parseFloat(value).toExponential(4) : value;
 }
+
+//transition effect for same number 
+//keyboard support
