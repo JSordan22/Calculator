@@ -5,8 +5,8 @@ let button1 = document.querySelectorAll(".button-1");
 let buttonOperator = document.querySelectorAll(".button-operator");
 let buttonNumber = document.querySelectorAll(".button-number");
 let buttonFunction = document.querySelectorAll(".button-function");
-let clearButton = document.querySelector(".AC");
-let equate = document.querySelector(".button-equate");
+let buttonClear = document.querySelector(".AC");
+let buttonEquate = document.querySelector(".button-equate");
 
 let isOperatorPressed = false;
 let num1;
@@ -46,24 +46,24 @@ buttonOperator.forEach(button => button.addEventListener("click", () => {
     checked(button);
     switch (true) {
         case button.classList.contains("divide"):
-            operatorFunc("/");
+            operatorEquate("/");
             break;
         case button.classList.contains("multiply"):
-            operatorFunc("*");
+            operatorEquate("*");
             break;
         case button.classList.contains("subtract"):
-            operatorFunc("-");
+            operatorEquate("-");
             break;
         case button.classList.contains("add"):
-            operatorFunc("+");
+            operatorEquate("+");
     }
     //console.log("num1: " + num1 + "\nnum2: " + num2);
 }));
 
 
-equate.addEventListener("click", () => {
-    checked();
-    equateFunc();
+buttonEquate.addEventListener("click", () => {
+    checked(undefined);
+    equate();
 });
 
 
@@ -76,7 +76,7 @@ function zero(button) {
 function decimal(button) {
     if (output.textContent.indexOf(".") === -1) {
         output.textContent += button.textContent;
-        clearButton.textContent = "C";
+        buttonClear.textContent = "C";
     }
 }
 
@@ -96,7 +96,7 @@ function input(button) {
         } else {
             output.textContent += button.textContent;
         }
-        clearButton.textContent = "C";
+        buttonClear.textContent = "C";
     }
 }
 
@@ -110,7 +110,7 @@ function allClear() {
 //clear(1);
 function clear(type) {
     if (type === 0) {
-        clearButton.textContent = "AC";
+        buttonClear.textContent = "AC";
         output.textContent = "0";
         isOperatorPressed = false;
         num1 = 0;
@@ -164,7 +164,7 @@ function solve(num1, num2, oper) {
     return ans;
 }
 
-function equateFunc() {
+function equate() {
     if (typeof oper !== "undefined") {
         //ChatGPT ternary operator
         num2 = typeof num2 !== "undefined" ? num2 : Number(output.textContent);
@@ -175,7 +175,7 @@ function equateFunc() {
     }
 }
 
-function operatorFunc(symb) {
+function operatorEquate(symb) {
     if (typeof oper === "undefined") {
         num1 = Number(output.textContent);
         oper = symb;
@@ -198,7 +198,7 @@ function operatorFunc(symb) {
 
 //from ChatGPT (whole funciton)
 function formatResult(value) {
-    return value.toString().length > 9 ? parseFloat(value).toExponential(4) : value;
+    return value.toString().length > 9 ? parseFloat(value).toFixed(4) : value;
 }
 
 //transition effect for same number 

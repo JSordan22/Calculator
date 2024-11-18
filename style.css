@@ -18,10 +18,12 @@
     --btn-hvr-1: #FFBE63;
     --btn-hvr-2: #868A8E;
     --btn-hvr-3: #E9E9E8;
+
+    --text-size: 10px;
 }
 
 html {
-    font-size: 10px;
+    font-size: var(--text-size);
     font-family: "Inter", sans-serif;
 }
 
@@ -52,7 +54,7 @@ body {
     width: 54rem;
     aspect-ratio: 27 / 41;
     padding: 4em 0;
-    border-radius: 75px;
+    border-radius: 7.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -60,7 +62,7 @@ body {
 }
 
 .copyright {
-    font-size: 2.85rem;
+    font-size: 1.5em;
     font-weight: 300;
     letter-spacing: 2px;
 }
@@ -79,27 +81,28 @@ body {
     background-color: var(--scrn-color);
     box-shadow: var(--scrn-shadow);
     color: var(--txt-color-1);
-    width: 46rem;
+    width: 46em;
+    font-size: var(--text-size);
     aspect-ratio: 46 / 17;
     padding: 0 2em 0;
-    border-radius: 25px;
+    border-radius: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: end;
 }
 
 .output {
-    max-width: 42rem;
-    font-size: 7.5rem;
+    max-width: 42em;
+    letter-spacing: 0.03em;
+    font-size: 7.5em;
     font-weight: 300;
-    letter-spacing: 0.3rem;
 }
 
 .buttons {
     display: grid;
-    grid-template-columns: repeat(4, 9rem);
-    grid-auto-rows: 9rem;
-    grid-gap: 20px;
+    grid-template-columns: repeat(4, 9em);
+    grid-auto-rows: 9em;
+    gap: 2em;
 }
 
 .button-1 {
@@ -113,6 +116,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.button-1 img {
+    width: 2.5rem;
 }
 
 .button-2 {
@@ -155,4 +162,16 @@ body {
 
 .active img {
     filter: invert(25%) sepia(44%) saturate(2797%) hue-rotate(344deg) brightness(100%) contrast(101%);
+}
+
+@media (max-width: 400px) {
+    :root {
+        --text-size: 5.5px;
+    }
+}
+
+@media (min-width: 401px) and (max-width: 600px) {
+    :root {
+        --text-size: 7px;
+    }
 }
